@@ -1,1 +1,71 @@
+<view class="container">
+  <view wx:if="{{loading}}" class="loading">
+    <text>加载中...</text>
+  </view>
+
+  <view wx:else class="report-content">
+    <!-- 头部年份 -->
+    <view class="header">
+      <text class="year">{{year}}</text>
+      <text class="title">年度爱的报告</text>
+    </view>
+
+    <!-- 核心数据卡片 -->
+    <view class="stats-grid">
+      <view class="stat-card hug-card">
+        <text class="stat-icon">❤️</text>
+        <text class="stat-value">{{hugCount}}</text>
+        <text class="stat-label">个拥抱</text>
+      </view>
+      <view class="stat-card distance-card">
+        <text class="stat-icon">📍</text>
+        <text class="stat-value">{{distance}}</text>
+        <text class="stat-label">跨越距离</text>
+      </view>
+      <view class="stat-card welfare-card">
+        <text class="stat-icon">💝</text>
+        <text class="stat-value">{{welfareTotal}}</text>
+        <text class="stat-label">爱心传递</text>
+      </view>
+    </view>
+
+    <!-- 最远距离 -->
+    <view class="highlight-card">
+      <text class="highlight-label">最远拥抱距离</text>
+      <text class="highlight-value">{{longestDistance}}</text>
+    </view>
+
+    <!-- 最常拥抱成员 -->
+    <view class="highlight-card">
+      <text class="highlight-label">最常拥抱的家人</text>
+      <text class="highlight-value">{{mostHuggedMember}}</text>
+    </view>
+
+    <!-- 月度趋势图 -->
+    <view class="chart-section">
+      <text class="chart-title">月度拥抱趋势</text>
+      <view class="chart-bars">
+        <view wx:for="{{monthlyData}}" wx:key="month" class="chart-item">
+          <view class="chart-bar" style="height: {{item.count / hugCount * 200}}rpx"></view>
+          <text class="chart-label">{{item.month}}月</text>
+          <text class="chart-count">{{item.count}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 爱心寄语 -->
+    <view class="message-card">
+      <text class="message-text">
+        在{{year}}年，你用{{hugCount}}个拥抱跨越了{{distance}}的距离，
+        {{hugCount > 0 ? '每一份拥抱都是爱的传递，让爱在家庭中永远流淌。' : '新的一年，给家人多一点拥抱吧！'}}
+      </text>
+    </view>
+
+    <!-- 分享按钮 -->
+    <button class="share-btn" open-type="share">
+      <text class="share-icon">📤</text>
+      <text>分享年度报告</text>
+    </button>
+  </view>
+</view>
 
