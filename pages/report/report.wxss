@@ -1,0 +1,189 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #FFF0F5 0%, #FFFFFF 100%);
+  padding: 30rpx;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 28rpx;
+  color: #999;
+}
+
+/* 头部 */
+.header {
+  text-align: center;
+  margin-bottom: 50rpx;
+}
+
+.year {
+  display: block;
+  font-size: 120rpx;
+  font-weight: bold;
+  color: #FF6B9D;
+  line-height: 1;
+  margin-bottom: 10rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  color: #333;
+}
+
+/* 统计网格 */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20rpx;
+  margin-bottom: 30rpx;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 30rpx 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.08);
+}
+
+.stat-icon {
+  font-size: 48rpx;
+  margin-bottom: 15rpx;
+}
+
+.stat-value {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.stat-label {
+  font-size: 22rpx;
+  color: #999;
+}
+
+.hug-card .stat-value {
+  color: #FF6B9D;
+}
+
+.distance-card .stat-value {
+  color: #667EEA;
+}
+
+.welfare-card .stat-value {
+  color: #38ef7d;
+}
+
+/* 高亮卡片 */
+.highlight-card {
+  background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+  border-radius: 24rpx;
+  padding: 40rpx 30rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 8rpx 24rpx rgba(102, 126, 234, 0.3);
+}
+
+.highlight-label {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.highlight-value {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* 图表区域 */
+.chart-section {
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.08);
+}
+
+.chart-title {
+  display: block;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30rpx;
+}
+
+.chart-bars {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 300rpx;
+}
+
+.chart-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chart-bar {
+  width: 40rpx;
+  background: linear-gradient(180deg, #FF6B9D 0%, #FF8A9B 100%);
+  border-radius: 20rpx 20rpx 0 0;
+  margin-bottom: 15rpx;
+  min-height: 8rpx;
+}
+
+.chart-label {
+  font-size: 20rpx;
+  color: #999;
+  margin-bottom: 5rpx;
+}
+
+.chart-count {
+  font-size: 20rpx;
+  color: #FF6B9D;
+  font-weight: bold;
+}
+
+/* 寄语卡片 */
+.message-card {
+  background: linear-gradient(135deg, #FFECD2 0%, #FCB69F 100%);
+  border-radius: 24rpx;
+  padding: 40rpx 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.message-text {
+  font-size: 28rpx;
+  color: #8B4513;
+  line-height: 1.8;
+}
+
+/* 分享按钮 */
+.share-btn {
+  width: 100%;
+  height: 100rpx;
+  background: linear-gradient(135deg, #FF6B9D 0%, #FF8A9B 100%);
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: bold;
+  border-radius: 50rpx;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-icon {
+  font-size: 36rpx;
+  margin-right: 10rpx;
+}
