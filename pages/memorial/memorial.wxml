@@ -1,1 +1,61 @@
 
+<!-- pages/memorial/memorial.wxml -->
+<!-- 伦理设计意图：纪念页面保持静默氛围，禁用娱乐化功能 -->
+<view class="container">
+  <!-- 静默背景，无粒子特效 -->
+  <view class="memorial-background"></view>
+
+  <!-- 头部信息 -->
+  <view class="header">
+    <view class="avatar-wrapper">
+      <image
+        class="avatar"
+        src="{{member.avatarUrl || '/static/images/default-avatar.png'}}"
+        mode="aspectFill"
+      />
+      <!-- 已故标识 -->
+      <view class="deceased-badge" wx:if="{{member.status === 'deceased'}}">
+        <text class="badge-icon">☆</text>
+      </view>
+    </view>
+    <text class="name">{{member.name}}</text>
+    <text class="relationship" wx:if="{{member.relationship}}">{{member.relationship}}</text>
+  </view>
+
+  <!-- 纪念文本 -->
+  <view class="memorial-text-area">
+    <text class="memorial-text">{{memorialText}}</text>
+  </view>
+
+  <!-- 蜡烛纪念 -->
+  <!-- 伦理设计意图：简单的交互，不使用复杂的AR或动画 -->
+  <view class="candle-area">
+    <view class="candle-wrapper {{candleLit ? 'lit' : ''}}" bindtap="lightCandle">
+      <text class="candle-icon">{{candleLit ? '🕯️' : '🕯️'}}</text>
+      <text class="candle-label">{{candleLit ? '已点燃' : '点击点燃蜡烛'}}</text>
+    </view>
+  </view>
+
+  <!-- 留言统计 -->
+  <view class="stats-area" wx:if="{{messageCount > 0}}">
+    <text class="stats-text">{{messageCount}} 条思念留言</text>
+  </view>
+
+  <!-- 功能按钮 -->
+  <view class="action-area">
+    <button class="action-btn" bindtap="sendMessage">
+      <text class="btn-icon">💭</text>
+      <text class="btn-text">写下思念</text>
+    </button>
+    <button class="action-btn" bindtap="viewAllMessages" wx:if="{{messageCount > 0}}">
+      <text class="btn-icon">📜</text>
+      <text class="btn-text">查看留言</text>
+    </button>
+  </view>
+
+  <!-- 伦理提示 -->
+  <!-- 伦理设计意图：明确纪念模式下的功能限制 -->
+  <view class="ethics-notice">
+    <text class="notice-text">思念无需喧嚣，爱在静默中长存</text>
+  </view>
+</view>
